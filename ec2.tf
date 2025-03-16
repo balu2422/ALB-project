@@ -45,16 +45,7 @@ resource "aws_instance" "web_2" {
               </body>
               </html>' | sudo tee /usr/share/nginx/html/images/index.html > /dev/null
 
-              # Configure Nginx for /images
-              sudo tee /etc/nginx/conf.d/images.conf > /dev/null <<EOT
-              server {
-                  listen 80;
-                  location /images {
-                      root /usr/share/nginx/html;
-                      index index.html;
-                  }
-              }
-              EOT
+      
 
               sudo systemctl restart nginx
               sudo systemctl enable nginx
@@ -84,16 +75,6 @@ resource "aws_instance" "web_3" {
               </body>
               </html>' | sudo tee /usr/share/nginx/html/register/index.html > /dev/null
 
-              # Configure Nginx for /register
-              sudo tee /etc/nginx/conf.d/register.conf > /dev/null <<EOT
-              server {
-                  listen 80;
-                  location /register {
-                      root /usr/share/nginx/html;
-                      index index.html;
-                  }
-              }
-              EOT
 
               sudo systemctl restart nginx
               sudo systemctl enable nginx
