@@ -15,8 +15,7 @@ resource "aws_instance" "web_1" {
               <body>
               <h1>Hello Bala, your Home page is ready</h1>
               </body>
-              </html>' | sudo tee /usr/share/nginx/html/index.html > /dev/null
-
+              </html>' 
               sudo systemctl restart nginx
               sudo systemctl enable nginx
 EOF
@@ -43,7 +42,7 @@ resource "aws_instance" "web_2" {
               <body>
               <h1>Hello Bala, your Images page is ready</h1>
               </body>
-              </html>' | sudo tee /usr/share/nginx/html/images/index.html > /dev/null
+              </html>'
 
       
 
@@ -73,7 +72,7 @@ resource "aws_instance" "web_3" {
               <body>
               <h1>Hello Bala, your Register page is ready</h1>
               </body>
-              </html>' | sudo tee /usr/share/nginx/html/register/index.html > /dev/null
+              </html>'
 
 
               sudo systemctl restart nginx
